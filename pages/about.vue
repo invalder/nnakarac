@@ -107,16 +107,16 @@
     </main>
     
     <footer>
-      <p>&copy; 2025 Nnakarac. Built with Nuxt.js</p>
+      <p>&copy; 2025 Nuttapon N. Built with Nuxt.js</p>
     </footer>
   </div>
 </template>
 
 <script setup>
 useHead({
-  title: 'Resume - Nnakarac',
+  title: 'Resume - Nuttapon N',
   meta: [
-    { name: 'description', content: 'Professional resume and work experience of Nnakarac - Full-Stack Developer' }
+    { name: 'description', content: 'Professional resume and work experience of Nuttapon N - Full-Stack Developer' }
   ]
 })
 </script>
