@@ -1,7 +1,7 @@
 {
   "name": "nnakarac",
   "version": "1.0.0",
-  "description": "A static Nuxt.js site",
+  "description": "Portfolio and online resume website built with Nuxt.js",
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
