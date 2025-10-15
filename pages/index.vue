@@ -2,7 +2,7 @@
   <div class="container">
     <header>
       <div class="hero">
-        <h1>Hi, I'm Nnakarac</h1>
+        <h1>Hi, I'm Nuttapon N</h1>
         <p class="subtitle">Full-Stack Developer & Software Engineer</p>
         <p class="tagline">Building modern web applications with passion and precision</p>
         <div class="cta-buttons">
@@ -83,22 +83,22 @@
         <div class="contact-links">
           <a href="mailto:contact@example.com" class="contact-link">📧 Email</a>
           <a href="https://github.com/invalder" target="_blank" class="contact-link">🐙 GitHub</a>
-          <a href="https://linkedin.com" target="_blank" class="contact-link">💼 LinkedIn</a>
+          <a href="https://www.linkedin.com/in/nuttapon-n-53a25438/" target="_blank" class="contact-link">💼 LinkedIn</a>
         </div>
       </section>
     </main>
     
     <footer>
-      <p>&copy; 2025 Nnakarac. Built with Nuxt.js</p>
+      <p>&copy; 2025 Nuttapon N. Built with Nuxt.js</p>
     </footer>
   </div>
 </template>
 
 <script setup>
 useHead({
-  title: 'Nnakarac - Full-Stack Developer & Software Engineer',
+  title: 'Nuttapon N - Full-Stack Developer & Software Engineer',
   meta: [
-    { name: 'description', content: 'Portfolio and online resume of Nnakarac - Full-Stack Developer specializing in Vue.js, Nuxt.js, and modern web technologies' }
+    { name: 'description', content: 'Portfolio and online resume of Nuttapon N - Full-Stack Developer specializing in Vue.js, Nuxt.js, and modern web technologies' }
   ]
 })
 </script>
