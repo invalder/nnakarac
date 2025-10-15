@@ -1,6 +1,6 @@
-# nnakarac
+# Nnakarac - Portfolio & Online Resume
 
-A static site built with Nuxt.js
+A modern portfolio and online resume website built with Nuxt.js, showcasing professional experience, skills, and projects.
 
 ## Setup
 
