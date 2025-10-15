@@ -8,9 +8,11 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# Nuxt.js
+.nuxt
+.output
+.dist
+/dist
 
 # production
 /build
@@ -33,4 +35,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+.nuxt/tsconfig.json
