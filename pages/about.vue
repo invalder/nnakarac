@@ -1,541 +1,116 @@
 <template>
   <div class="container">
     <header>
-      <h1>Resume</h1>
-      <NuxtLink to="/" class="back-link">← Back to Home</NuxtLink>
+      <h1>{{ pageData.header.title }}</h1>
+      <NuxtLink to="/" class="back-link">{{ pageData.header.backLinkText }}</NuxtLink>
     </header>
     
     <main>
       <section class="content">
-        <h2>Professional Summary</h2>
-        <p>
-          Experienced Project Manager and Technical Consultant with 10+ years of expertise in IT Project Management, Solution Architecture, and System Development. 
-          Strong background in satellite systems, enterprise software, and business development with proven experience in stakeholder management, 
-          technical support, and project implementation. Passionate about delivering high-quality solutions and managing complex technical projects.
-        </p>
+        <h2>{{ pageData.professionalSummary.title }}</h2>
+        <p>{{ pageData.professionalSummary.content }}</p>
         
-        <h3>Work Experience</h3>
+        <h3>{{ pageData.workExperience.title }}</h3>
         
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(0)" style="cursor: pointer;">
+        <div 
+          v-for="(experience, index) in pageData.workExperience.items" 
+          :key="index"
+          class="experience-item"
+        >
+          <div class="experience-header" @click="toggleExperience(index)" style="cursor: pointer;">
             <div>
               <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(0) ? '▼' : '▶' }}</span>
-                Co-Founder
+                <span class="toggle-icon">{{ isExperienceExpanded(index) ? '▼' : '▶' }}</span>
+                {{ experience.title }}
               </h4>
-              <p class="company">88 Pizza House · Self-employed</p>
+              <p class="company">{{ experience.company }}</p>
             </div>
-            <span class="period">Jun 2025 - Present · 5 mos</span>
+            <span class="period">{{ experience.period }}</span>
           </div>
-          <div v-show="isExperienceExpanded(0)" class="experience-details">
-            <p class="location">Chon Buri, Thailand</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(1)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(1) ? '▼' : '▶' }}</span>
-                Co-Founder
-              </h4>
-              <p class="company">Cake Prokfa · Self-employed</p>
-            </div>
-            <span class="period">Jan 2024 - Present · 1 yr 10 mos</span>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(2)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(2) ? '▼' : '▶' }}</span>
-                Project Manager
-              </h4>
-              <p class="company">Lexnetix</p>
-            </div>
-            <span class="period">Sep 2022 - Present · 3 yrs 2 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(2)" class="experience-details">
-            <p class="location">Bangkok City, Thailand · Hybrid · Full-time</p>
-            <p><strong>Skills:</strong> Project Plans · Business Operations · Solution Architecture · Enterprise Software · Data Governance · IT systems development · Stakeholder Management · Presentations · Solution Selling · Project Planning · Account Management · Project Direction · Organization Skills · IT Project Management · IT Enabled Business Transformation · Attention to Detail · Software as a Service (SaaS) · Microsoft PowerPoint · Communication · PDPA · Software Architectural Design · Business Development · Technical Support · System Development · Client Relations · IT Service Management · English · Demonstration · Jira · Problem Solving · Bid Processes · Pre-Sales Support · Software Development Life Cycle (SDLC) · Project Documentation · Product Management · Project Management · Information Technology · Workflow Management · Project Implementation · Workload Prioritization · Microsoft Office · Analytical Skills · Linux</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(3)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(3) ? '▼' : '▶' }}</span>
-                Technical Consultant
-              </h4>
-              <p class="company">Lexnetix</p>
-            </div>
-            <span class="period">Jun 2022 - Aug 2022 · 3 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(3)" class="experience-details">
-            <p class="job-type">Contract</p>
-            <ul>
-              <li>System Analyst</li>
-              <li>POC Tester</li>
-              <li>User Manual Documentation</li>
-              <li>Proposal Documentation</li>
+          <div v-show="isExperienceExpanded(index)" class="experience-details">
+            <p v-if="experience.location" class="location">{{ experience.location }}</p>
+            <p v-if="experience.jobType" class="job-type">{{ experience.jobType }}</p>
+            <p v-if="experience.description">{{ experience.description }}</p>
+            <p v-if="experience.projectTitle"><strong>{{ experience.projectTitle }}</strong></p>
+            <ul v-if="experience.details && experience.details.length > 0">
+              <li v-for="(detail, detailIndex) in experience.details" :key="detailIndex">
+                {{ detail }}
+              </li>
             </ul>
-            <p><strong>Skills:</strong> Solution Architecture · IT systems development · Stakeholder Management · Presentations · Project Planning · Project Direction · Organization Skills · IT Project Management · Jitsi · Software as a Service (SaaS) · Microsoft PowerPoint · Communication · PDPA · Software Architectural Design · Technical Support · IT Service Management · English · Demonstration · Problem Solving · Software Development Life Cycle (SDLC) · Information Technology · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(4)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(4) ? '▼' : '▶' }}</span>
-                Co-investigator
-              </h4>
-              <p class="company">Keeta</p>
+            <div v-if="experience.jobDescription">
+              <p><strong>Job Description:</strong></p>
+              <ul>
+                <li v-for="(desc, descIndex) in experience.jobDescription" :key="descIndex">
+                  {{ desc }}
+                </li>
+              </ul>
             </div>
-            <span class="period">Oct 2021 - Present · 4 yrs 1 mo</span>
-          </div>
-          <div v-show="isExperienceExpanded(4)" class="experience-details">
-            <p>KEETA PROPOSED A CONCEPT OF SUSTAINABLE BIO-CULTURE SYSTEM THAT WILL BE USE FOR THE PRODUCTION OF SPACE FOOD BY USING RESOURCES FROM ITS OWN SUB-SYSTEMS WHICH INCLUDES FOOD PROCESSING UNIT, INSECT-BASED UTILIZATION UNIT, AND PLANT-BASED UTILIZATION UNIT</p>
-            <p><strong>Skills:</strong> Stakeholder Management · Presentations · Project Planning · Project Direction · Organization Skills · IT Project Management · Attention to Detail · Microsoft PowerPoint · Communication · English · Problem Solving · Project Management · Information Technology · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(5)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(5) ? '▼' : '▶' }}</span>
-                Project Manager
-              </h4>
-              <p class="company">Sinority</p>
+            <div v-if="experience.experiences">
+              <p><strong>Experiences:</strong></p>
+              <ul>
+                <li v-for="(exp, expIndex) in experience.experiences" :key="expIndex">
+                  {{ exp }}
+                </li>
+              </ul>
             </div>
-            <span class="period">Nov 2022 - 2023 · 3 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(5)" class="experience-details">
-            <p class="location">Bangkok, Bangkok City, Thailand · Full-time</p>
-            <p>Sinority is a cyber securities solutions provider. We provide support to protect your business from cyberattack and data breach, we have professionals and experts who specialize in cyber defense, incident response and data protection. Our solutions cover all aspects of cyber defense, provided by highly-experienced experts and professionals. We have 3 main service areas: Prevention, Response and Investigation.</p>
-            <p><strong>Skills:</strong> Stakeholder Management · Solution Selling · Project Planning · Project Direction · Organization Skills · IT Project Management · Attack Surface Management · Microsoft PowerPoint · Communication · English · Problem Solving · Project Documentation · Project Management · Information Technology · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(6)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(6) ? '▼' : '▶' }}</span>
-                Technical Consultant
-              </h4>
-              <p class="company">BearMix</p>
+            <div v-if="experience.satellitePlatforms">
+              <p><strong>Experience - Satellite Platform:</strong></p>
+              <ul>
+                <li v-for="(platform, platformIndex) in experience.satellitePlatforms" :key="platformIndex">
+                  {{ platform }}
+                </li>
+              </ul>
             </div>
-            <span class="period">Jun 2022 - Aug 2022 · 3 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(6)" class="experience-details">
-            <p class="location">Bangkok, Bangkok City, Thailand · Part-time</p>
-            <ul>
-              <li>Logs Inspection and analysis</li>
-              <li>Hardware Functionality Tests</li>
-              <li>Bugs finder</li>
-              <li>Project Management</li>
-            </ul>
-            <p><strong>Skills:</strong> IT systems development · Stakeholder Management · Project Planning · Project Direction · Organization Skills · IT Project Management · Microsoft PowerPoint · Communication · Technical Support · System Development · English · Demonstration · Problem Solving · Information Technology · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(7)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(7) ? '▼' : '▶' }}</span>
-                Business Development Engineer
-              </h4>
-              <p class="company">SITE PREPARATION MANAGEMENT CO., LTD.</p>
+            <div v-if="experience.ttcSoftware">
+              <p><strong>TT&C Software Product:</strong></p>
+              <ul>
+                <li v-for="(software, softwareIndex) in experience.ttcSoftware" :key="softwareIndex">
+                  {{ software }}
+                </li>
+              </ul>
             </div>
-            <span class="period">Jan 2021 - Dec 2021 · 1 yr</span>
-          </div>
-          <div v-show="isExperienceExpanded(7)" class="experience-details">
-            <p class="job-type">Full-time</p>
-            <ul>
-              <li>Business Development</li>
-              <li>Software Development (Node.js, Vue/NuxtJs, Laravel)</li>
-            </ul>
-            <p><strong>Experiences:</strong></p>
-            <ul>
-              <li>ERP customization and support</li>
-              <li>Vendor Online System</li>
-              <li>New Project/Solution Development</li>
-            </ul>
-            <p><strong>Skills:</strong> Business Operations · Enterprise Software · IT systems development · Project Planning · Project Direction · Organization Skills · Attention to Detail · Software as a Service (SaaS) · Microsoft PowerPoint · Communication · Software Architectural Design · Technical Support · System Development · IT Service Management · English · Demonstration · Problem Solving · Software Development Life Cycle (SDLC) · Information Technology · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(8)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(8) ? '▼' : '▶' }}</span>
-                Freelance Researcher
-              </h4>
-              <p class="company">Freelance</p>
-            </div>
-            <span class="period">Jul 2021 - Jul 2021 · 1 mo</span>
-          </div>
-          <div v-show="isExperienceExpanded(8)" class="experience-details">
-            <p class="location">Bangkok Metropolitan Area</p>
-            <p><strong>Skills:</strong> Project Direction · Organization Skills · Microsoft PowerPoint · Communication · English · Problem Solving · Information Technology · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(9)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(9) ? '▼' : '▶' }}</span>
-                Gap year
-              </h4>
-              <p class="company">Career Break</p>
-            </div>
-            <span class="period">Jun 2020 - Dec 2020 · 7 mos</span>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(10)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(10) ? '▼' : '▶' }}</span>
-                Programmer (Business & Research developer)
-              </h4>
-              <p class="company">SITE PREPARATION MANAGEMENT CO., LTD.</p>
-            </div>
-            <span class="period">Apr 2020 - May 2020 · 2 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(10)" class="experience-details">
-            <p class="job-type">Contract</p>
-            <p><strong>Skills:</strong> Enterprise Software · IT systems development · Project Planning · Project Direction · Organization Skills · Attention to Detail · Software as a Service (SaaS) · Microsoft PowerPoint · Communication · Software Architectural Design · Technical Support · System Development · IT Service Management · English · Demonstration · Problem Solving · Software Development Life Cycle (SDLC) · Information Technology · Project Implementation · Microsoft Office · Analytical Skills · Linux</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(11)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(11) ? '▼' : '▶' }}</span>
-                Senior Engineering Manager
-              </h4>
-              <p class="company">mu Space Corp</p>
-            </div>
-            <span class="period">Jan 2020 - Feb 2020 · 2 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(11)" class="experience-details">
-            <p><strong>Skills:</strong> Project Plans · Business Operations · Solution Architecture · Stakeholder Management · Presentations · Solution Selling · Project Planning · Project Direction · Organization Skills · Attention to Detail · Microsoft PowerPoint · Communication · Business Development · English · Demonstration · Problem Solving · Bid Processes · Pre-Sales Support · Project Management · Information Technology · Project Implementation · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(12)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(12) ? '▼' : '▶' }}</span>
-                Engineering Manager / Business Development Executive
-              </h4>
-              <p class="company">mu Space Corp</p>
-            </div>
-            <span class="period">Apr 2019 - Dec 2019 · 9 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(12)" class="experience-details">
-            <p><strong>Skills:</strong> Project Plans · Business Operations · Solution Architecture · Stakeholder Management · Presentations · Solution Selling · Project Planning · Project Direction · Organization Skills · IT Project Management · Attention to Detail · Microsoft PowerPoint · Communication · Business Development · English · Demonstration · Problem Solving · Bid Processes · Pre-Sales Support · Information Technology · Project Implementation · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(13)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(13) ? '▼' : '▶' }}</span>
-                Satellite System Specialist / Business Development Executive
-              </h4>
-              <p class="company">mu Space Corp</p>
-            </div>
-            <span class="period">Nov 2017 - Apr 2019 · 1 yr 6 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(13)" class="experience-details">
-            <p><strong>Skills:</strong> Business Operations · Solution Architecture · Stakeholder Management · Presentations · Solution Selling · Project Planning · Project Direction · Organization Skills · IT Project Management · Attention to Detail · Microsoft PowerPoint · Communication · Business Development · System Development · English · Demonstration · Problem Solving · Pre-Sales Support · Information Technology · Project Implementation · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(14)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(14) ? '▼' : '▶' }}</span>
-                Project Management Coordinator
-              </h4>
-              <p class="company">Energy Exploration Co., Ltd.</p>
-            </div>
-            <span class="period">Sep 2019 - Feb 2020 · 6 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(14)" class="experience-details">
-            <p class="location">Bangkok Metropolitan Area</p>
-            <p><strong>Project Coordinator: Solar System for NodeB</strong></p>
-            <ul>
-              <li>Collaborated between the customer, vendors, suppliers, and sub-contractor</li>
-              <li>Provided task updates and gathered essential information to the team</li>
-              <li>Provided training and documentation to the customer</li>
-              <li>Provided Technical and Engineering Supports</li>
-              <li>Conducted Demonstration and Training</li>
-              <li>Supported procurement and sourcing</li>
-            </ul>
-            <p><strong>Skills:</strong> Project Plans · Business Operations · Solution Architecture · Stakeholder Management · Presentations · Project Planning · Project Direction · Organization Skills · IT Project Management · Microsoft PowerPoint · Communication · English · Demonstration · Solar PV · Project Coordination · Problem Solving · Bid Processes · Pre-Sales Support · Project Management · Solar Energy · Information Technology · Project Implementation · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(15)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(15) ? '▼' : '▶' }}</span>
-                Technical Advisor
-              </h4>
-              <p class="company">Araone Hyperloop</p>
-            </div>
-            <span class="period">May 2019 - Jan 2020 · 9 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(15)" class="experience-details">
-            <p class="job-type">Part-time</p>
-            <p><strong>Skills:</strong> Stakeholder Management · Project Direction · Organization Skills · Microsoft PowerPoint · Communication · English · Problem Solving · Information Technology · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(16)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(16) ? '▼' : '▶' }}</span>
-                Senior Satellite Control Engineer
-              </h4>
-              <p class="company">THAICOM PUBLIC COMPANY LIMITED</p>
-            </div>
-            <span class="period">Aug 2011 - Oct 2017 · 6 yrs 3 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(16)" class="experience-details">
-            <p class="location">Nonthaburi, Thailand</p>
-            <p><strong>Job Description:</strong></p>
-            <ul>
-              <li>Monitor the satellite health and overall condition of the satellite station and control centre and execute the satellite operation per the approved plan, procedure, and direction</li>
-              <li>Comply with the operational process and its quality control</li>
-              <li>Support the new project related to satellite operation and satellite station per assignment</li>
-              <li>Support the overall tasks and assignment from Satellite Control Department Manager</li>
-              <li>Coordinate and maintain the operation of the augmented facility. In addition to maintaining the control system</li>
-              <li>Support the occasional requests related to a satellite from other departments</li>
-            </ul>
-            <p><strong>Experience - Satellite Platform:</strong></p>
-            <ul>
-              <li>SPACEBUS 3000 (Thales Alenia)</li>
-              <li>LS1300 (Space System Loral)</li>
-              <li>STAR2 (Orbital ATK)</li>
-            </ul>
-            <p><strong>TT&C Software Product:</strong></p>
-            <ul>
-              <li>EPOCH IPS/2000 (Kratos-ISI, USA)</li>
-              <li>HIFLY SOFTWARE (GMV, Spain)</li>
-              <li>InControl-NG (L-3 storm, USA)</li>
-              <li>Aérospatiale Control Software (Aérospatiale/Thales Alenia, France)</li>
-            </ul>
-            <p><strong>Skills:</strong> Satellite · IT systems development · Satellite Command & Control · Project Planning · Project Direction · Organization Skills · Attention to Detail · Microsoft PowerPoint · Satellite Ground Systems · Communication · Technical Support · English · Satellite Systems Engineering · Problem Solving · Information Technology · Satellite Communications · Microsoft Office · Analytical Skills · Linux</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(17)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(17) ? '▼' : '▶' }}</span>
-                Software Developer
-              </h4>
-              <p class="company">Vantage Business Solutions (Thailand) Ltd.</p>
-            </div>
-            <span class="period">Jun 2011 - Jul 2011 · 2 mos</span>
-          </div>
-          <div v-show="isExperienceExpanded(17)" class="experience-details">
-            <p>Development and Customization for MS Dynamics AX to support the customer</p>
-            <p><strong>Skills:</strong> Enterprise Resource Planning (ERP) · Enterprise Software · IT systems development · Stakeholder Management · Project Direction · Organization Skills · Microsoft Dynamics AX · Microsoft PowerPoint · Communication · English · Problem Solving · Information Technology · Microsoft Office · Analytical Skills</p>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header" @click="toggleExperience(18)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isExperienceExpanded(18) ? '▼' : '▶' }}</span>
-                Short Summer Students Training
-              </h4>
-              <p class="company">University of Electro-Communications</p>
-            </div>
-            <span class="period">Apr 2010 - Apr 2010 · 1 mo</span>
-          </div>
-          <div v-show="isExperienceExpanded(18)" class="experience-details">
-            <p class="location">Chofu, Tokyo, Japan</p>
-            <p><strong>Skills:</strong> Microsoft PowerPoint · English · Problem Solving · Information Technology · Microsoft Office · Analytical Skills</p>
+            <p v-if="experience.skills"><strong>Skills:</strong> {{ experience.skills }}</p>
           </div>
         </div>
         
-        <h3>Education</h3>
+        <h3>{{ pageData.education.title }}</h3>
         
-        <div class="education-item">
-          <div class="education-header" @click="toggleEducation(0)" style="cursor: pointer;">
+        <div 
+          v-for="(education, index) in pageData.education.items" 
+          :key="index"
+          class="education-item"
+        >
+          <div class="education-header" @click="toggleEducation(index)" style="cursor: pointer;">
             <div>
               <h4>
-                <span class="toggle-icon">{{ isEducationExpanded(0) ? '▼' : '▶' }}</span>
-                Outer Common Core, Computer Programming
+                <span class="toggle-icon">{{ isEducationExpanded(index) ? '▼' : '▶' }}</span>
+                {{ education.title }}
               </h4>
-              <p class="school">42 Bangkok</p>
+              <p class="school">{{ education.school }}</p>
             </div>
-            <span class="period">Aug 2024</span>
+            <span class="period">{{ education.period }}</span>
           </div>
-          <div v-show="isEducationExpanded(0)" class="education-details">
-            <p><strong>Skills:</strong> Stakeholder Management · IT systems development · Information Technology · Analytical Skills · Linux · English · Problem Solving</p>
-          </div>
-        </div>
-
-        <div class="education-item">
-          <div class="education-header" @click="toggleEducation(1)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isEducationExpanded(1) ? '▼' : '▶' }}</span>
-                Common Curriculum, Computer Programming
-              </h4>
-              <p class="school">42 Bangkok</p>
-            </div>
-            <span class="period">Feb 2022 - Aug 2024</span>
-          </div>
-          <div v-show="isEducationExpanded(1)" class="education-details">
-            <p><strong>Skills:</strong> Docker · Stakeholder Management · IT systems development · Information Technology · Bash · Analytical Skills · Linux · English · JavaScript · Problem Solving · Shell Scripting · C++ · mlx · Hyperganic Core · Python · Microsoft PowerPoint · C</p>
-          </div>
-        </div>
-
-        <div class="education-item">
-          <div class="education-header" @click="toggleEducation(2)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isEducationExpanded(2) ? '▼' : '▶' }}</span>
-                Master of Engineering (M.Eng.), Information Engineering
-              </h4>
-              <p class="school">King Mongkut's Institute of Technology Ladkrabang</p>
-            </div>
-            <span class="period">2013 - 2017</span>
-          </div>
-          <div v-show="isEducationExpanded(2)" class="education-details">
-            <p><strong>Skills:</strong> Stakeholder Management · IT systems development · Information Technology · Analytical Skills · Linux · English · Problem Solving · Microsoft Office · Microsoft PowerPoint</p>
-          </div>
-        </div>
-
-        <div class="education-item">
-          <div class="education-header" @click="toggleEducation(3)" style="cursor: pointer;">
-            <div>
-              <h4>
-                <span class="toggle-icon">{{ isEducationExpanded(3) ? '▼' : '▶' }}</span>
-                Bachelor of Engineering (B.Eng.), Information Engineering
-              </h4>
-              <p class="school">King Mongkut's Institute of Technology Ladkrabang</p>
-            </div>
-            <span class="period">2007 - 2010</span>
-          </div>
-          <div v-show="isEducationExpanded(3)" class="education-details">
-            <p><strong>Activities and societies:</strong> Robot Club (Staff)</p>
-            <p><strong>Skills:</strong> Java · Microsoft PowerPoint</p>
+          <div v-show="isEducationExpanded(index)" class="education-details">
+            <p v-if="education.activities"><strong>Activities and societies:</strong> {{ education.activities }}</p>
+            <p v-if="education.skills"><strong>Skills:</strong> {{ education.skills }}</p>
           </div>
         </div>
         
-        <h3>Technical Skills</h3>
+        <h3>{{ pageData.technicalSkills.title }}</h3>
         <div class="skills-list">
-          <div class="skill-item">
-            <div class="skill-header" @click="toggleSkill(0)" style="cursor: pointer;">
+          <div 
+            v-for="(skillCategory, index) in pageData.technicalSkills.categories" 
+            :key="index"
+            class="skill-item"
+          >
+            <div class="skill-header" @click="toggleSkill(index)" style="cursor: pointer;">
               <strong>
-                <span class="toggle-icon">{{ isSkillExpanded(0) ? '▼' : '▶' }}</span>
-                Project Management:
+                <span class="toggle-icon">{{ isSkillExpanded(index) ? '▼' : '▶' }}</span>
+                {{ skillCategory.name }}
               </strong>
             </div>
-            <div v-show="isSkillExpanded(0)" class="skill-details">
-              Project Plans · Project Planning · Project Direction · IT Project Management · Project Documentation · Project Management · Project Implementation · Workflow Management · Workload Prioritization · Project Coordination · Bid Processes
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header" @click="toggleSkill(1)" style="cursor: pointer;">
-              <strong>
-                <span class="toggle-icon">{{ isSkillExpanded(1) ? '▼' : '▶' }}</span>
-                Technical & Architecture:
-              </strong>
-            </div>
-            <div v-show="isSkillExpanded(1)" class="skill-details">
-              Solution Architecture · IT systems development · Software Architectural Design · System Development · Software Development Life Cycle (SDLC) · Enterprise Software · Data Governance · IT Service Management · Attack Surface Management
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header" @click="toggleSkill(2)" style="cursor: pointer;">
-              <strong>
-                <span class="toggle-icon">{{ isSkillExpanded(2) ? '▼' : '▶' }}</span>
-                Business & Development:
-              </strong>
-            </div>
-            <div v-show="isSkillExpanded(2)" class="skill-details">
-              Business Operations · Business Development · Solution Selling · Account Management · Product Management · Pre-Sales Support · Client Relations · IT Enabled Business Transformation
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header" @click="toggleSkill(3)" style="cursor: pointer;">
-              <strong>
-                <span class="toggle-icon">{{ isSkillExpanded(3) ? '▼' : '▶' }}</span>
-                Software & Tools:
-              </strong>
-            </div>
-            <div v-show="isSkillExpanded(3)" class="skill-details">
-              Software as a Service (SaaS) · Microsoft PowerPoint · Microsoft Office · Jira · Node.js · Vue/NuxtJs · Laravel · Docker · Jitsi · Linux · Microsoft Dynamics AX · Enterprise Resource Planning (ERP)
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header" @click="toggleSkill(4)" style="cursor: pointer;">
-              <strong>
-                <span class="toggle-icon">{{ isSkillExpanded(4) ? '▼' : '▶' }}</span>
-                Satellite Systems:
-              </strong>
-            </div>
-            <div v-show="isSkillExpanded(4)" class="skill-details">
-              Satellite · Satellite Command & Control · Satellite Ground Systems · Satellite Systems Engineering · Satellite Communications
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header" @click="toggleSkill(5)" style="cursor: pointer;">
-              <strong>
-                <span class="toggle-icon">{{ isSkillExpanded(5) ? '▼' : '▶' }}</span>
-                Languages & Programming:
-              </strong>
-            </div>
-            <div v-show="isSkillExpanded(5)" class="skill-details">
-              JavaScript · Python · C · C++ · Java · Bash · Shell Scripting · mlx · Hyperganic Core
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header" @click="toggleSkill(6)" style="cursor: pointer;">
-              <strong>
-                <span class="toggle-icon">{{ isSkillExpanded(6) ? '▼' : '▶' }}</span>
-                Specialized:
-              </strong>
-            </div>
-            <div v-show="isSkillExpanded(6)" class="skill-details">
-              Solar PV · Solar Energy · PDPA (Data Protection)
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header" @click="toggleSkill(7)" style="cursor: pointer;">
-              <strong>
-                <span class="toggle-icon">{{ isSkillExpanded(7) ? '▼' : '▶' }}</span>
-                Soft Skills:
-              </strong>
-            </div>
-            <div v-show="isSkillExpanded(7)" class="skill-details">
-              Stakeholder Management · Presentations · Communication · Organization Skills · Attention to Detail · English · Demonstration · Problem Solving · Analytical Skills · Technical Support
+            <div v-show="isSkillExpanded(index)" class="skill-details">
+              {{ skillCategory.skills }}
             </div>
           </div>
         </div>
@@ -543,18 +118,21 @@
     </main>
     
     <footer>
-      <p>&copy; 2025 Nuttapon N. Built with Nuxt.js</p>
+      <p>{{ pageData.footer.text }}</p>
     </footer>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import resumeData from '@/data/resume.json'
+
+const pageData = resumeData
 
 useHead({
-  title: 'Resume - Nuttapon N',
+  title: pageData.seo.title,
   meta: [
-    { name: 'description', content: 'Professional resume and work experience of Nuttapon N - Full-Stack Developer' }
+    { name: 'description', content: pageData.seo.description }
   ]
 })
 

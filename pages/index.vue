@@ -2,103 +2,93 @@
   <div class="container">
     <header>
       <div class="hero">
-        <h1>Hi, I'm Nuttapon N</h1>
-        <p class="subtitle">Project Manager & Technical Consultant</p>
-        <p class="tagline">Delivering innovative solutions in IT Project Management, Solution Architecture, and System Development</p>
+        <h1>{{ pageData.hero.name }}</h1>
+        <p class="subtitle">{{ pageData.hero.subtitle }}</p>
+        <p class="tagline">{{ pageData.hero.tagline }}</p>
         <div class="cta-buttons">
-          <NuxtLink to="/about" class="btn btn-primary">View Resume</NuxtLink>
-          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+          <NuxtLink 
+            v-for="(button, index) in pageData.hero.buttons" 
+            :key="index"
+            :to="button.link" 
+            :class="['btn', `btn-${button.type}`]"
+          >
+            {{ button.text }}
+          </NuxtLink>
         </div>
       </div>
     </header>
     
     <main>
       <section class="skills-section">
-        <h2>Core Competencies</h2>
+        <h2>{{ pageData.skills.title }}</h2>
         <div class="skills-grid">
-          <div class="skill-card">
-            <div class="skill-icon">📊</div>
-            <h3>Project Management</h3>
-            <p>IT Project Management, Project Planning, Stakeholder Management, Workflow Management, Jira, SDLC</p>
-          </div>
-          
-          <div class="skill-card">
-            <div class="skill-icon">🏗️</div>
-            <h3>Solution Architecture</h3>
-            <p>System Development, Software Architectural Design, Enterprise Software, SaaS, Data Governance</p>
-          </div>
-          
-          <div class="skill-card">
-            <div class="skill-icon">🛰️</div>
-            <h3>Satellite Systems</h3>
-            <p>Satellite Control, Ground Systems, Satellite Communications, TT&C Software</p>
-          </div>
-          
-          <div class="skill-card">
-            <div class="skill-icon">💼</div>
-            <h3>Business Development</h3>
-            <p>Solution Selling, Pre-Sales Support, Account Management, Client Relations, Business Operations</p>
+          <div 
+            v-for="(skill, index) in pageData.skills.items" 
+            :key="index"
+            class="skill-card"
+          >
+            <div class="skill-icon">{{ skill.icon }}</div>
+            <h3>{{ skill.title }}</h3>
+            <p>{{ skill.description }}</p>
           </div>
         </div>
       </section>
 
       <section class="projects-section">
-        <h2>Key Experience Highlights</h2>
+        <h2>{{ pageData.projects.title }}</h2>
         <div class="projects-grid">
-          <div class="project-card">
-            <h3>Lexnetix - Project Manager</h3>
-            <p>Leading IT projects with focus on solution architecture, enterprise software development, and stakeholder management in a SaaS environment.</p>
+          <div 
+            v-for="(project, index) in pageData.projects.items" 
+            :key="index"
+            class="project-card"
+          >
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
             <div class="tech-stack">
-              <span class="tech-tag">Project Management</span>
-              <span class="tech-tag">Solution Architecture</span>
-              <span class="tech-tag">Jira</span>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <h3>THAICOM - Senior Satellite Control Engineer</h3>
-            <p>6+ years managing satellite operations, control systems, and coordination of satellite stations. Expertise with multiple satellite platforms and TT&C software.</p>
-            <div class="tech-stack">
-              <span class="tech-tag">Satellite Systems</span>
-              <span class="tech-tag">Operations</span>
-              <span class="tech-tag">Linux</span>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <h3>mu Space Corp - Engineering Manager</h3>
-            <p>Led business development and engineering management for satellite and space technology projects with focus on solution selling and pre-sales support.</p>
-            <div class="tech-stack">
-              <span class="tech-tag">Business Development</span>
-              <span class="tech-tag">Engineering Management</span>
-              <span class="tech-tag">Pre-Sales</span>
+              <span 
+                v-for="(tag, tagIndex) in project.tags" 
+                :key="tagIndex"
+                class="tech-tag"
+              >
+                {{ tag }}
+              </span>
             </div>
           </div>
         </div>
       </section>
 
       <section id="contact" class="contact-section">
-        <h2>Get In Touch</h2>
-        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+        <h2>{{ pageData.contact.title }}</h2>
+        <p>{{ pageData.contact.description }}</p>
         <div class="contact-links">
-          <a href="mailto:n.nakarach@gmail.com" class="contact-link">📧 Email</a>
-          <a href="https://github.com/invalder" target="_blank" class="contact-link">🐙 GitHub</a>
-          <a href="https://www.linkedin.com/in/nuttapon-n-53a25438/" target="_blank" class="contact-link">💼 LinkedIn</a>
+          <a 
+            v-for="(link, index) in pageData.contact.links" 
+            :key="index"
+            :href="link.url" 
+            class="contact-link"
+            :target="link.url.startsWith('http') ? '_blank' : undefined"
+          >
+            {{ link.text }}
+          </a>
         </div>
       </section>
     </main>
     
     <footer>
-      <p>&copy; 2025 Nuttapon N. Built with Nuxt.js</p>
+      <p>{{ pageData.footer.text }}</p>
     </footer>
   </div>
 </template>
 
 <script setup>
+import indexData from '@/data/index.json'
+
+const pageData = indexData
+
 useHead({
-  title: 'Nuttapon N - Project Manager & Technical Consultant',
+  title: pageData.seo.title,
   meta: [
-    { name: 'description', content: 'Portfolio and online resume of Nuttapon N - Project Manager & Technical Consultant specializing in IT Project Management, Solution Architecture, and Satellite Systems' }
+    { name: 'description', content: pageData.seo.description }
   ]
 })
 </script>

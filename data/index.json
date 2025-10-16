@@ -1,0 +1,89 @@
+{
+  "seo": {
+    "title": "Nuttapon N - Project Manager & Technical Consultant",
+    "description": "Portfolio and online resume of Nuttapon N - Project Manager & Technical Consultant specializing in IT Project Management, Solution Architecture, and Satellite Systems"
+  },
+  "hero": {
+    "name": "Hi, I'm Nuttapon N",
+    "subtitle": "Project Manager & Technical Consultant",
+    "tagline": "Delivering innovative solutions in IT Project Management, Solution Architecture, and System Development",
+    "buttons": [
+      {
+        "text": "View Resume",
+        "link": "/about",
+        "type": "primary"
+      },
+      {
+        "text": "Get in Touch",
+        "link": "#contact",
+        "type": "secondary"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Core Competencies",
+    "items": [
+      {
+        "icon": "📊",
+        "title": "Project Management",
+        "description": "IT Project Management, Project Planning, Stakeholder Management, Workflow Management, Jira, SDLC"
+      },
+      {
+        "icon": "🏗️",
+        "title": "Solution Architecture",
+        "description": "System Development, Software Architectural Design, Enterprise Software, SaaS, Data Governance"
+      },
+      {
+        "icon": "🛰️",
+        "title": "Satellite Systems",
+        "description": "Satellite Control, Ground Systems, Satellite Communications, TT&C Software"
+      },
+      {
+        "icon": "💼",
+        "title": "Business Development",
+        "description": "Solution Selling, Pre-Sales Support, Account Management, Client Relations, Business Operations"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Key Experience Highlights",
+    "items": [
+      {
+        "title": "Lexnetix - Project Manager",
+        "description": "Leading IT projects with focus on solution architecture, enterprise software development, and stakeholder management in a SaaS environment.",
+        "tags": ["Project Management", "Solution Architecture", "Jira"]
+      },
+      {
+        "title": "THAICOM - Senior Satellite Control Engineer",
+        "description": "6+ years managing satellite operations, control systems, and coordination of satellite stations. Expertise with multiple satellite platforms and TT&C software.",
+        "tags": ["Satellite Systems", "Operations", "Linux"]
+      },
+      {
+        "title": "mu Space Corp - Engineering Manager",
+        "description": "Led business development and engineering management for satellite and space technology projects with focus on solution selling and pre-sales support.",
+        "tags": ["Business Development", "Engineering Management", "Pre-Sales"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.",
+    "links": [
+      {
+        "text": "📧 Email",
+        "url": "mailto:n.nakarach@gmail.com"
+      },
+      {
+        "text": "🐙 GitHub",
+        "url": "https://github.com/invalder"
+      },
+      {
+        "text": "💼 LinkedIn",
+        "url": "https://www.linkedin.com/in/nuttapon-n-53a25438/"
+      }
+    ]
+  },
+  "footer": {
+    "text": "© 2025 Nuttapon N. Built with Nuxt.js"
+  }
+}

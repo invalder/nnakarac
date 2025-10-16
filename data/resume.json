@@ -1,0 +1,279 @@
+{
+  "seo": {
+    "title": "Resume - Nuttapon N",
+    "description": "Professional resume and work experience of Nuttapon N - Full-Stack Developer"
+  },
+  "header": {
+    "title": "Resume",
+    "backLinkText": "← Back to Home"
+  },
+  "professionalSummary": {
+    "title": "Professional Summary",
+    "content": "Experienced Project Manager and Technical Consultant with 10+ years of expertise in IT Project Management, Solution Architecture, and System Development. Strong background in satellite systems, enterprise software, and business development with proven experience in stakeholder management, technical support, and project implementation. Passionate about delivering high-quality solutions and managing complex technical projects."
+  },
+  "workExperience": {
+    "title": "Work Experience",
+    "items": [
+      {
+        "title": "Co-Founder",
+        "company": "88 Pizza House · Self-employed",
+        "period": "Jun 2025 - Present · 5 mos",
+        "location": "Chon Buri, Thailand",
+        "details": []
+      },
+      {
+        "title": "Co-Founder",
+        "company": "Cake Prokfa · Self-employed",
+        "period": "Jan 2024 - Present · 1 yr 10 mos",
+        "details": []
+      },
+      {
+        "title": "Project Manager",
+        "company": "Lexnetix",
+        "period": "Sep 2022 - Present · 3 yrs 2 mos",
+        "location": "Bangkok City, Thailand · Hybrid · Full-time",
+        "skills": "Project Plans · Business Operations · Solution Architecture · Enterprise Software · Data Governance · IT systems development · Stakeholder Management · Presentations · Solution Selling · Project Planning · Account Management · Project Direction · Organization Skills · IT Project Management · IT Enabled Business Transformation · Attention to Detail · Software as a Service (SaaS) · Microsoft PowerPoint · Communication · PDPA · Software Architectural Design · Business Development · Technical Support · System Development · Client Relations · IT Service Management · English · Demonstration · Jira · Problem Solving · Bid Processes · Pre-Sales Support · Software Development Life Cycle (SDLC) · Project Documentation · Product Management · Project Management · Information Technology · Workflow Management · Project Implementation · Workload Prioritization · Microsoft Office · Analytical Skills · Linux",
+        "details": []
+      },
+      {
+        "title": "Technical Consultant",
+        "company": "Lexnetix",
+        "period": "Jun 2022 - Aug 2022 · 3 mos",
+        "jobType": "Contract",
+        "skills": "Solution Architecture · IT systems development · Stakeholder Management · Presentations · Project Planning · Project Direction · Organization Skills · IT Project Management · Jitsi · Software as a Service (SaaS) · Microsoft PowerPoint · Communication · PDPA · Software Architectural Design · Technical Support · IT Service Management · English · Demonstration · Problem Solving · Software Development Life Cycle (SDLC) · Information Technology · Microsoft Office · Analytical Skills",
+        "details": [
+          "System Analyst",
+          "POC Tester",
+          "User Manual Documentation",
+          "Proposal Documentation"
+        ]
+      },
+      {
+        "title": "Co-investigator",
+        "company": "Keeta",
+        "period": "Oct 2021 - Present · 4 yrs 1 mo",
+        "description": "KEETA PROPOSED A CONCEPT OF SUSTAINABLE BIO-CULTURE SYSTEM THAT WILL BE USE FOR THE PRODUCTION OF SPACE FOOD BY USING RESOURCES FROM ITS OWN SUB-SYSTEMS WHICH INCLUDES FOOD PROCESSING UNIT, INSECT-BASED UTILIZATION UNIT, AND PLANT-BASED UTILIZATION UNIT",
+        "skills": "Stakeholder Management · Presentations · Project Planning · Project Direction · Organization Skills · IT Project Management · Attention to Detail · Microsoft PowerPoint · Communication · English · Problem Solving · Project Management · Information Technology · Microsoft Office · Analytical Skills",
+        "details": []
+      },
+      {
+        "title": "Project Manager",
+        "company": "Sinority",
+        "period": "Nov 2022 - 2023 · 3 mos",
+        "location": "Bangkok, Bangkok City, Thailand · Full-time",
+        "description": "Sinority is a cyber securities solutions provider. We provide support to protect your business from cyberattack and data breach, we have professionals and experts who specialize in cyber defense, incident response and data protection. Our solutions cover all aspects of cyber defense, provided by highly-experienced experts and professionals. We have 3 main service areas: Prevention, Response and Investigation.",
+        "skills": "Stakeholder Management · Solution Selling · Project Planning · Project Direction · Organization Skills · IT Project Management · Attack Surface Management · Microsoft PowerPoint · Communication · English · Problem Solving · Project Documentation · Project Management · Information Technology · Microsoft Office · Analytical Skills",
+        "details": []
+      },
+      {
+        "title": "Technical Consultant",
+        "company": "BearMix",
+        "period": "Jun 2022 - Aug 2022 · 3 mos",
+        "location": "Bangkok, Bangkok City, Thailand · Part-time",
+        "skills": "IT systems development · Stakeholder Management · Project Planning · Project Direction · Organization Skills · IT Project Management · Microsoft PowerPoint · Communication · Technical Support · System Development · English · Demonstration · Problem Solving · Information Technology · Microsoft Office · Analytical Skills",
+        "details": [
+          "Logs Inspection and analysis",
+          "Hardware Functionality Tests",
+          "Bugs finder",
+          "Project Management"
+        ]
+      },
+      {
+        "title": "Business Development Engineer",
+        "company": "SITE PREPARATION MANAGEMENT CO., LTD.",
+        "period": "Jan 2021 - Dec 2021 · 1 yr",
+        "jobType": "Full-time",
+        "skills": "Business Operations · Enterprise Software · IT systems development · Project Planning · Project Direction · Organization Skills · Attention to Detail · Software as a Service (SaaS) · Microsoft PowerPoint · Communication · Software Architectural Design · Technical Support · System Development · IT Service Management · English · Demonstration · Problem Solving · Software Development Life Cycle (SDLC) · Information Technology · Microsoft Office · Analytical Skills",
+        "details": [
+          "Business Development",
+          "Software Development (Node.js, Vue/NuxtJs, Laravel)"
+        ],
+        "experiences": [
+          "ERP customization and support",
+          "Vendor Online System",
+          "New Project/Solution Development"
+        ]
+      },
+      {
+        "title": "Freelance Researcher",
+        "company": "Freelance",
+        "period": "Jul 2021 - Jul 2021 · 1 mo",
+        "location": "Bangkok Metropolitan Area",
+        "skills": "Project Direction · Organization Skills · Microsoft PowerPoint · Communication · English · Problem Solving · Information Technology · Microsoft Office · Analytical Skills",
+        "details": []
+      },
+      {
+        "title": "Gap year",
+        "company": "Career Break",
+        "period": "Jun 2020 - Dec 2020 · 7 mos",
+        "details": []
+      },
+      {
+        "title": "Programmer (Business & Research developer)",
+        "company": "SITE PREPARATION MANAGEMENT CO., LTD.",
+        "period": "Apr 2020 - May 2020 · 2 mos",
+        "jobType": "Contract",
+        "skills": "Enterprise Software · IT systems development · Project Planning · Project Direction · Organization Skills · Attention to Detail · Software as a Service (SaaS) · Microsoft PowerPoint · Communication · Software Architectural Design · Technical Support · System Development · IT Service Management · English · Demonstration · Problem Solving · Software Development Life Cycle (SDLC) · Information Technology · Project Implementation · Microsoft Office · Analytical Skills · Linux",
+        "details": []
+      },
+      {
+        "title": "Senior Engineering Manager",
+        "company": "mu Space Corp",
+        "period": "Jan 2020 - Feb 2020 · 2 mos",
+        "skills": "Project Plans · Business Operations · Solution Architecture · Stakeholder Management · Presentations · Solution Selling · Project Planning · Project Direction · Organization Skills · Attention to Detail · Microsoft PowerPoint · Communication · Business Development · English · Demonstration · Problem Solving · Bid Processes · Pre-Sales Support · Project Management · Information Technology · Project Implementation · Microsoft Office · Analytical Skills",
+        "details": []
+      },
+      {
+        "title": "Engineering Manager / Business Development Executive",
+        "company": "mu Space Corp",
+        "period": "Apr 2019 - Dec 2019 · 9 mos",
+        "skills": "Project Plans · Business Operations · Solution Architecture · Stakeholder Management · Presentations · Solution Selling · Project Planning · Project Direction · Organization Skills · IT Project Management · Attention to Detail · Microsoft PowerPoint · Communication · Business Development · English · Demonstration · Problem Solving · Bid Processes · Pre-Sales Support · Information Technology · Project Implementation · Microsoft Office · Analytical Skills",
+        "details": []
+      },
+      {
+        "title": "Satellite System Specialist / Business Development Executive",
+        "company": "mu Space Corp",
+        "period": "Nov 2017 - Apr 2019 · 1 yr 6 mos",
+        "skills": "Business Operations · Solution Architecture · Stakeholder Management · Presentations · Solution Selling · Project Planning · Project Direction · Organization Skills · IT Project Management · Attention to Detail · Microsoft PowerPoint · Communication · Business Development · System Development · English · Demonstration · Problem Solving · Pre-Sales Support · Information Technology · Project Implementation · Microsoft Office · Analytical Skills",
+        "details": []
+      },
+      {
+        "title": "Project Management Coordinator",
+        "company": "Energy Exploration Co., Ltd.",
+        "period": "Sep 2019 - Feb 2020 · 6 mos",
+        "location": "Bangkok Metropolitan Area",
+        "projectTitle": "Project Coordinator: Solar System for NodeB",
+        "skills": "Project Plans · Business Operations · Solution Architecture · Stakeholder Management · Presentations · Project Planning · Project Direction · Organization Skills · IT Project Management · Microsoft PowerPoint · Communication · English · Demonstration · Solar PV · Project Coordination · Problem Solving · Bid Processes · Pre-Sales Support · Project Management · Solar Energy · Information Technology · Project Implementation · Microsoft Office · Analytical Skills",
+        "details": [
+          "Collaborated between the customer, vendors, suppliers, and sub-contractor",
+          "Provided task updates and gathered essential information to the team",
+          "Provided training and documentation to the customer",
+          "Provided Technical and Engineering Supports",
+          "Conducted Demonstration and Training",
+          "Supported procurement and sourcing"
+        ]
+      },
+      {
+        "title": "Technical Advisor",
+        "company": "Araone Hyperloop",
+        "period": "May 2019 - Jan 2020 · 9 mos",
+        "jobType": "Part-time",
+        "skills": "Stakeholder Management · Project Direction · Organization Skills · Microsoft PowerPoint · Communication · English · Problem Solving · Information Technology · Microsoft Office · Analytical Skills",
+        "details": []
+      },
+      {
+        "title": "Senior Satellite Control Engineer",
+        "company": "THAICOM PUBLIC COMPANY LIMITED",
+        "period": "Aug 2011 - Oct 2017 · 6 yrs 3 mos",
+        "location": "Nonthaburi, Thailand",
+        "skills": "Satellite · IT systems development · Satellite Command & Control · Project Planning · Project Direction · Organization Skills · Attention to Detail · Microsoft PowerPoint · Satellite Ground Systems · Communication · Technical Support · English · Satellite Systems Engineering · Problem Solving · Information Technology · Satellite Communications · Microsoft Office · Analytical Skills · Linux",
+        "jobDescription": [
+          "Monitor the satellite health and overall condition of the satellite station and control centre and execute the satellite operation per the approved plan, procedure, and direction",
+          "Comply with the operational process and its quality control",
+          "Support the new project related to satellite operation and satellite station per assignment",
+          "Support the overall tasks and assignment from Satellite Control Department Manager",
+          "Coordinate and maintain the operation of the augmented facility. In addition to maintaining the control system",
+          "Support the occasional requests related to a satellite from other departments"
+        ],
+        "satellitePlatforms": [
+          "SPACEBUS 3000 (Thales Alenia)",
+          "LS1300 (Space System Loral)",
+          "STAR2 (Orbital ATK)"
+        ],
+        "ttcSoftware": [
+          "EPOCH IPS/2000 (Kratos-ISI, USA)",
+          "HIFLY SOFTWARE (GMV, Spain)",
+          "InControl-NG (L-3 storm, USA)",
+          "Aérospatiale Control Software (Aérospatiale/Thales Alenia, France)"
+        ],
+        "details": []
+      },
+      {
+        "title": "Software Developer",
+        "company": "Vantage Business Solutions (Thailand) Ltd.",
+        "period": "Jun 2011 - Jul 2011 · 2 mos",
+        "description": "Development and Customization for MS Dynamics AX to support the customer",
+        "skills": "Enterprise Resource Planning (ERP) · Enterprise Software · IT systems development · Stakeholder Management · Project Direction · Organization Skills · Microsoft Dynamics AX · Microsoft PowerPoint · Communication · English · Problem Solving · Information Technology · Microsoft Office · Analytical Skills",
+        "details": []
+      },
+      {
+        "title": "Short Summer Students Training",
+        "company": "University of Electro-Communications",
+        "period": "Apr 2010 - Apr 2010 · 1 mo",
+        "location": "Chofu, Tokyo, Japan",
+        "skills": "Microsoft PowerPoint · English · Problem Solving · Information Technology · Microsoft Office · Analytical Skills",
+        "details": []
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      {
+        "title": "Outer Common Core, Computer Programming",
+        "school": "42 Bangkok",
+        "period": "Aug 2024",
+        "skills": "Stakeholder Management · IT systems development · Information Technology · Analytical Skills · Linux · English · Problem Solving"
+      },
+      {
+        "title": "Common Curriculum, Computer Programming",
+        "school": "42 Bangkok",
+        "period": "Feb 2022 - Aug 2024",
+        "skills": "Docker · Stakeholder Management · IT systems development · Information Technology · Bash · Analytical Skills · Linux · English · JavaScript · Problem Solving · Shell Scripting · C++ · mlx · Hyperganic Core · Python · Microsoft PowerPoint · C"
+      },
+      {
+        "title": "Master of Engineering (M.Eng.), Information Engineering",
+        "school": "King Mongkut's Institute of Technology Ladkrabang",
+        "period": "2013 - 2017",
+        "skills": "Stakeholder Management · IT systems development · Information Technology · Analytical Skills · Linux · English · Problem Solving · Microsoft Office · Microsoft PowerPoint"
+      },
+      {
+        "title": "Bachelor of Engineering (B.Eng.), Information Engineering",
+        "school": "King Mongkut's Institute of Technology Ladkrabang",
+        "period": "2007 - 2010",
+        "activities": "Robot Club (Staff)",
+        "skills": "Java · Microsoft PowerPoint"
+      }
+    ]
+  },
+  "technicalSkills": {
+    "title": "Technical Skills",
+    "categories": [
+      {
+        "name": "Project Management:",
+        "skills": "Project Plans · Project Planning · Project Direction · IT Project Management · Project Documentation · Project Management · Project Implementation · Workflow Management · Workload Prioritization · Project Coordination · Bid Processes"
+      },
+      {
+        "name": "Technical & Architecture:",
+        "skills": "Solution Architecture · IT systems development · Software Architectural Design · System Development · Software Development Life Cycle (SDLC) · Enterprise Software · Data Governance · IT Service Management · Attack Surface Management"
+      },
+      {
+        "name": "Business & Development:",
+        "skills": "Business Operations · Business Development · Solution Selling · Account Management · Product Management · Pre-Sales Support · Client Relations · IT Enabled Business Transformation"
+      },
+      {
+        "name": "Software & Tools:",
+        "skills": "Software as a Service (SaaS) · Microsoft PowerPoint · Microsoft Office · Jira · Node.js · Vue/NuxtJs · Laravel · Docker · Jitsi · Linux · Microsoft Dynamics AX · Enterprise Resource Planning (ERP)"
+      },
+      {
+        "name": "Satellite Systems:",
+        "skills": "Satellite · Satellite Command & Control · Satellite Ground Systems · Satellite Systems Engineering · Satellite Communications"
+      },
+      {
+        "name": "Languages & Programming:",
+        "skills": "JavaScript · Python · C · C++ · Java · Bash · Shell Scripting · mlx · Hyperganic Core"
+      },
+      {
+        "name": "Specialized:",
+        "skills": "Solar PV · Solar Energy · PDPA (Data Protection)"
+      },
+      {
+        "name": "Soft Skills:",
+        "skills": "Stakeholder Management · Presentations · Communication · Organization Skills · Attention to Detail · English · Demonstration · Problem Solving · Analytical Skills · Technical Support"
+      }
+    ]
+  },
+  "footer": {
+    "text": "© 2025 Nuttapon N. Built with Nuxt.js"
+  }
+}
