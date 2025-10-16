@@ -81,7 +81,7 @@
         <h2>Get In Touch</h2>
         <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
         <div class="contact-links">
-          <a href="mailto:contact@example.com" class="contact-link">📧 Email</a>
+          <a href="mailto:n.nakarach@gmail.com" class="contact-link">📧 Email</a>
           <a href="https://github.com/invalder" target="_blank" class="contact-link">🐙 GitHub</a>
           <a href="https://www.linkedin.com/in/nuttapon-n-53a25438/" target="_blank" class="contact-link">💼 LinkedIn</a>
         </div>
