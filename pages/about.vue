@@ -395,7 +395,7 @@
             <span class="period">Aug 2024</span>
           </div>
           <div v-show="isEducationExpanded(0)" class="education-details">
-            <p><strong>Skills:</strong> Stakeholder Management, IT systems development, Information Technology, Analytical Skills, Linux, English, Problem Solving</p>
+            <p><strong>Skills:</strong> Stakeholder Management · IT systems development · Information Technology · Analytical Skills · Linux · English · Problem Solving</p>
           </div>
         </div>
 
@@ -411,7 +411,7 @@
             <span class="period">Feb 2022 - Aug 2024</span>
           </div>
           <div v-show="isEducationExpanded(1)" class="education-details">
-            <p><strong>Skills:</strong> Docker, Stakeholder Management, IT systems development, Information Technology, Bash, Analytical Skills, Linux, English, JavaScript, Problem Solving, Shell Scripting, C++, mlx, Hyperganic Core, Python, Microsoft PowerPoint, C</p>
+            <p><strong>Skills:</strong> Docker · Stakeholder Management · IT systems development · Information Technology · Bash · Analytical Skills · Linux · English · JavaScript · Problem Solving · Shell Scripting · C++ · mlx · Hyperganic Core · Python · Microsoft PowerPoint · C</p>
           </div>
         </div>
 
@@ -427,7 +427,7 @@
             <span class="period">2013 - 2017</span>
           </div>
           <div v-show="isEducationExpanded(2)" class="education-details">
-            <p><strong>Skills:</strong> Stakeholder Management, IT systems development, Information Technology, Analytical Skills, Linux, English, Problem Solving, Microsoft Office, Microsoft PowerPoint</p>
+            <p><strong>Skills:</strong> Stakeholder Management · IT systems development · Information Technology · Analytical Skills · Linux · English · Problem Solving · Microsoft Office · Microsoft PowerPoint</p>
           </div>
         </div>
 
@@ -444,7 +444,7 @@
           </div>
           <div v-show="isEducationExpanded(3)" class="education-details">
             <p><strong>Activities and societies:</strong> Robot Club (Staff)</p>
-            <p><strong>Skills:</strong> Java, Microsoft PowerPoint</p>
+            <p><strong>Skills:</strong> Java · Microsoft PowerPoint</p>
           </div>
         </div>
         
