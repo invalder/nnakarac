@@ -69,12 +69,46 @@
         <div class="education-item">
           <div class="education-header">
             <div>
-              <h4>Bachelor of Science in Computer Science</h4>
-              <p class="school">University of Technology</p>
+              <h4>Outer Common Core, Computer Programming</h4>
+              <p class="school">42 Bangkok</p>
             </div>
-            <span class="period">2015 - 2019</span>
+            <span class="period">Aug 2024</span>
           </div>
-          <p>Graduated with Honors • GPA: 3.8/4.0</p>
+          <p><strong>Skills:</strong> Stakeholder Management, IT systems development, Information Technology, Analytical Skills, Linux, English, Problem Solving</p>
+        </div>
+
+        <div class="education-item">
+          <div class="education-header">
+            <div>
+              <h4>Common Curriculum, Computer Programming</h4>
+              <p class="school">42 Bangkok</p>
+            </div>
+            <span class="period">Feb 2022 - Aug 2024</span>
+          </div>
+          <p><strong>Skills:</strong> Docker, Stakeholder Management, IT systems development, Information Technology, Bash, Analytical Skills, Linux, English, JavaScript, Problem Solving, Shell Scripting, C++, mlx, Hyperganic Core, Python, Microsoft PowerPoint, C</p>
+        </div>
+
+        <div class="education-item">
+          <div class="education-header">
+            <div>
+              <h4>Master of Engineering (M.Eng.), Information Engineering</h4>
+              <p class="school">King Mongkut's Institute of Technology Ladkrabang</p>
+            </div>
+            <span class="period">2013 - 2017</span>
+          </div>
+          <p><strong>Skills:</strong> Stakeholder Management, IT systems development, Information Technology, Analytical Skills, Linux, English, Problem Solving, Microsoft Office, Microsoft PowerPoint</p>
+        </div>
+
+        <div class="education-item">
+          <div class="education-header">
+            <div>
+              <h4>Bachelor of Engineering (B.Eng.), Information Engineering</h4>
+              <p class="school">King Mongkut's Institute of Technology Ladkrabang</p>
+            </div>
+            <span class="period">2007 - 2010</span>
+          </div>
+          <p><strong>Activities and societies:</strong> Robot Club (Staff)</p>
+          <p><strong>Skills:</strong> Java, Microsoft PowerPoint</p>
         </div>
         
         <h3>Certifications</h3>
