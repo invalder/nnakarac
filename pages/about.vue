@@ -495,27 +495,19 @@ useHead({
 })
 
 // Track expanded state for each experience and education item
-const expandedExperiences = ref(new Set())
-const expandedEducation = ref(new Set())
+const expandedExperiences = ref({})
+const expandedEducation = ref({})
 
 const toggleExperience = (index) => {
-  if (expandedExperiences.value.has(index)) {
-    expandedExperiences.value.delete(index)
-  } else {
-    expandedExperiences.value.add(index)
-  }
+  expandedExperiences.value[index] = !expandedExperiences.value[index]
 }
 
 const toggleEducation = (index) => {
-  if (expandedEducation.value.has(index)) {
-    expandedEducation.value.delete(index)
-  } else {
-    expandedEducation.value.add(index)
-  }
+  expandedEducation.value[index] = !expandedEducation.value[index]
 }
 
-const isExperienceExpanded = (index) => expandedExperiences.value.has(index)
-const isEducationExpanded = (index) => expandedEducation.value.has(index)
+const isExperienceExpanded = (index) => !!expandedExperiences.value[index]
+const isEducationExpanded = (index) => !!expandedEducation.value[index]
 </script>
 
 <style scoped>
