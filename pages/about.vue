@@ -450,29 +450,93 @@
         
         <h3>Technical Skills</h3>
         <div class="skills-list">
-          <div class="skill-category">
-            <strong>Project Management:</strong> Project Plans · Project Planning · Project Direction · IT Project Management · Project Documentation · Project Management · Project Implementation · Workflow Management · Workload Prioritization · Project Coordination · Bid Processes
+          <div class="skill-item">
+            <div class="skill-header" @click="toggleSkill(0)" style="cursor: pointer;">
+              <strong>
+                <span class="toggle-icon">{{ isSkillExpanded(0) ? '▼' : '▶' }}</span>
+                Project Management:
+              </strong>
+            </div>
+            <div v-show="isSkillExpanded(0)" class="skill-details">
+              Project Plans · Project Planning · Project Direction · IT Project Management · Project Documentation · Project Management · Project Implementation · Workflow Management · Workload Prioritization · Project Coordination · Bid Processes
+            </div>
           </div>
-          <div class="skill-category">
-            <strong>Technical & Architecture:</strong> Solution Architecture · IT systems development · Software Architectural Design · System Development · Software Development Life Cycle (SDLC) · Enterprise Software · Data Governance · IT Service Management · Attack Surface Management
+          <div class="skill-item">
+            <div class="skill-header" @click="toggleSkill(1)" style="cursor: pointer;">
+              <strong>
+                <span class="toggle-icon">{{ isSkillExpanded(1) ? '▼' : '▶' }}</span>
+                Technical & Architecture:
+              </strong>
+            </div>
+            <div v-show="isSkillExpanded(1)" class="skill-details">
+              Solution Architecture · IT systems development · Software Architectural Design · System Development · Software Development Life Cycle (SDLC) · Enterprise Software · Data Governance · IT Service Management · Attack Surface Management
+            </div>
           </div>
-          <div class="skill-category">
-            <strong>Business & Development:</strong> Business Operations · Business Development · Solution Selling · Account Management · Product Management · Pre-Sales Support · Client Relations · IT Enabled Business Transformation
+          <div class="skill-item">
+            <div class="skill-header" @click="toggleSkill(2)" style="cursor: pointer;">
+              <strong>
+                <span class="toggle-icon">{{ isSkillExpanded(2) ? '▼' : '▶' }}</span>
+                Business & Development:
+              </strong>
+            </div>
+            <div v-show="isSkillExpanded(2)" class="skill-details">
+              Business Operations · Business Development · Solution Selling · Account Management · Product Management · Pre-Sales Support · Client Relations · IT Enabled Business Transformation
+            </div>
           </div>
-          <div class="skill-category">
-            <strong>Software & Tools:</strong> Software as a Service (SaaS) · Microsoft PowerPoint · Microsoft Office · Jira · Node.js · Vue/NuxtJs · Laravel · Docker · Jitsi · Linux · Microsoft Dynamics AX · Enterprise Resource Planning (ERP)
+          <div class="skill-item">
+            <div class="skill-header" @click="toggleSkill(3)" style="cursor: pointer;">
+              <strong>
+                <span class="toggle-icon">{{ isSkillExpanded(3) ? '▼' : '▶' }}</span>
+                Software & Tools:
+              </strong>
+            </div>
+            <div v-show="isSkillExpanded(3)" class="skill-details">
+              Software as a Service (SaaS) · Microsoft PowerPoint · Microsoft Office · Jira · Node.js · Vue/NuxtJs · Laravel · Docker · Jitsi · Linux · Microsoft Dynamics AX · Enterprise Resource Planning (ERP)
+            </div>
           </div>
-          <div class="skill-category">
-            <strong>Satellite Systems:</strong> Satellite · Satellite Command & Control · Satellite Ground Systems · Satellite Systems Engineering · Satellite Communications
+          <div class="skill-item">
+            <div class="skill-header" @click="toggleSkill(4)" style="cursor: pointer;">
+              <strong>
+                <span class="toggle-icon">{{ isSkillExpanded(4) ? '▼' : '▶' }}</span>
+                Satellite Systems:
+              </strong>
+            </div>
+            <div v-show="isSkillExpanded(4)" class="skill-details">
+              Satellite · Satellite Command & Control · Satellite Ground Systems · Satellite Systems Engineering · Satellite Communications
+            </div>
           </div>
-          <div class="skill-category">
-            <strong>Languages & Programming:</strong> JavaScript · Python · C · C++ · Java · Bash · Shell Scripting · mlx · Hyperganic Core
+          <div class="skill-item">
+            <div class="skill-header" @click="toggleSkill(5)" style="cursor: pointer;">
+              <strong>
+                <span class="toggle-icon">{{ isSkillExpanded(5) ? '▼' : '▶' }}</span>
+                Languages & Programming:
+              </strong>
+            </div>
+            <div v-show="isSkillExpanded(5)" class="skill-details">
+              JavaScript · Python · C · C++ · Java · Bash · Shell Scripting · mlx · Hyperganic Core
+            </div>
           </div>
-          <div class="skill-category">
-            <strong>Specialized:</strong> Solar PV · Solar Energy · PDPA (Data Protection)
+          <div class="skill-item">
+            <div class="skill-header" @click="toggleSkill(6)" style="cursor: pointer;">
+              <strong>
+                <span class="toggle-icon">{{ isSkillExpanded(6) ? '▼' : '▶' }}</span>
+                Specialized:
+              </strong>
+            </div>
+            <div v-show="isSkillExpanded(6)" class="skill-details">
+              Solar PV · Solar Energy · PDPA (Data Protection)
+            </div>
           </div>
-          <div class="skill-category">
-            <strong>Soft Skills:</strong> Stakeholder Management · Presentations · Communication · Organization Skills · Attention to Detail · English · Demonstration · Problem Solving · Analytical Skills · Technical Support
+          <div class="skill-item">
+            <div class="skill-header" @click="toggleSkill(7)" style="cursor: pointer;">
+              <strong>
+                <span class="toggle-icon">{{ isSkillExpanded(7) ? '▼' : '▶' }}</span>
+                Soft Skills:
+              </strong>
+            </div>
+            <div v-show="isSkillExpanded(7)" class="skill-details">
+              Stakeholder Management · Presentations · Communication · Organization Skills · Attention to Detail · English · Demonstration · Problem Solving · Analytical Skills · Technical Support
+            </div>
           </div>
         </div>
       </section>
@@ -494,9 +558,10 @@ useHead({
   ]
 })
 
-// Track expanded state for each experience and education item
+// Track expanded state for each experience, education, and skill item
 const expandedExperiences = ref({})
 const expandedEducation = ref({})
+const expandedSkills = ref({})
 
 const toggleExperience = (index) => {
   expandedExperiences.value[index] = !expandedExperiences.value[index]
@@ -506,8 +571,13 @@ const toggleEducation = (index) => {
   expandedEducation.value[index] = !expandedEducation.value[index]
 }
 
+const toggleSkill = (index) => {
+  expandedSkills.value[index] = !expandedSkills.value[index]
+}
+
 const isExperienceExpanded = (index) => !!expandedExperiences.value[index]
 const isEducationExpanded = (index) => !!expandedEducation.value[index]
+const isSkillExpanded = (index) => !!expandedSkills.value[index]
 </script>
 
 <style scoped>
@@ -685,18 +755,37 @@ li {
   gap: 1rem;
 }
 
-.skill-category {
+.skill-item {
   padding: 1rem;
   background: #f8f9fa;
   border-radius: 6px;
-  line-height: 1.8;
-  color: #555;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
 }
 
-.skill-category strong {
+.skill-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.skill-header {
+  transition: all 0.2s ease;
+}
+
+.skill-header:hover {
+  color: #667eea;
+}
+
+.skill-header strong {
   color: #2c3e50;
-  display: inline-block;
-  min-width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.skill-details {
+  padding-top: 0.75rem;
+  line-height: 1.8;
+  color: #555;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 footer {
