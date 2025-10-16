@@ -3,8 +3,8 @@
     <header>
       <div class="hero">
         <h1>Hi, I'm Nuttapon N</h1>
-        <p class="subtitle">Full-Stack Developer & Software Engineer</p>
-        <p class="tagline">Building modern web applications with passion and precision</p>
+        <p class="subtitle">Project Manager & Technical Consultant</p>
+        <p class="tagline">Delivering innovative solutions in IT Project Management, Solution Architecture, and System Development</p>
         <div class="cta-buttons">
           <NuxtLink to="/about" class="btn btn-primary">View Resume</NuxtLink>
           <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -14,64 +14,64 @@
     
     <main>
       <section class="skills-section">
-        <h2>Technical Skills</h2>
+        <h2>Core Competencies</h2>
         <div class="skills-grid">
           <div class="skill-card">
-            <div class="skill-icon">💻</div>
-            <h3>Frontend</h3>
-            <p>Vue.js, Nuxt.js, React, JavaScript, TypeScript, HTML5, CSS3</p>
+            <div class="skill-icon">📊</div>
+            <h3>Project Management</h3>
+            <p>IT Project Management, Project Planning, Stakeholder Management, Workflow Management, Jira, SDLC</p>
           </div>
           
           <div class="skill-card">
-            <div class="skill-icon">⚙️</div>
-            <h3>Backend</h3>
-            <p>Node.js, Express, Python, Django, REST APIs, GraphQL</p>
+            <div class="skill-icon">🏗️</div>
+            <h3>Solution Architecture</h3>
+            <p>System Development, Software Architectural Design, Enterprise Software, SaaS, Data Governance</p>
           </div>
           
           <div class="skill-card">
-            <div class="skill-icon">🗄️</div>
-            <h3>Database</h3>
-            <p>PostgreSQL, MongoDB, MySQL, Redis, Firebase</p>
+            <div class="skill-icon">🛰️</div>
+            <h3>Satellite Systems</h3>
+            <p>Satellite Control, Ground Systems, Satellite Communications, TT&C Software</p>
           </div>
           
           <div class="skill-card">
-            <div class="skill-icon">☁️</div>
-            <h3>DevOps</h3>
-            <p>Docker, AWS, Git, CI/CD, Nginx, Linux</p>
+            <div class="skill-icon">💼</div>
+            <h3>Business Development</h3>
+            <p>Solution Selling, Pre-Sales Support, Account Management, Client Relations, Business Operations</p>
           </div>
         </div>
       </section>
 
       <section class="projects-section">
-        <h2>Featured Projects</h2>
+        <h2>Key Experience Highlights</h2>
         <div class="projects-grid">
           <div class="project-card">
-            <h3>E-Commerce Platform</h3>
-            <p>Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.</p>
+            <h3>Lexnetix - Project Manager</h3>
+            <p>Leading IT projects with focus on solution architecture, enterprise software development, and stakeholder management in a SaaS environment.</p>
             <div class="tech-stack">
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Project Management</span>
+              <span class="tech-tag">Solution Architecture</span>
+              <span class="tech-tag">Jira</span>
             </div>
           </div>
           
           <div class="project-card">
-            <h3>Project Management Tool</h3>
-            <p>Collaborative project management application with real-time updates and team collaboration features.</p>
+            <h3>THAICOM - Senior Satellite Control Engineer</h3>
+            <p>6+ years managing satellite operations, control systems, and coordination of satellite stations. Expertise with multiple satellite platforms and TT&C software.</p>
             <div class="tech-stack">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Express</span>
-              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Satellite Systems</span>
+              <span class="tech-tag">Operations</span>
+              <span class="tech-tag">Linux</span>
             </div>
           </div>
           
           <div class="project-card">
-            <h3>Analytics Dashboard</h3>
-            <p>Real-time data visualization dashboard with interactive charts and comprehensive reporting.</p>
+            <h3>mu Space Corp - Engineering Manager</h3>
+            <p>Led business development and engineering management for satellite and space technology projects with focus on solution selling and pre-sales support.</p>
             <div class="tech-stack">
-              <span class="tech-tag">Nuxt.js</span>
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Redis</span>
+              <span class="tech-tag">Business Development</span>
+              <span class="tech-tag">Engineering Management</span>
+              <span class="tech-tag">Pre-Sales</span>
             </div>
           </div>
         </div>
@@ -96,9 +96,9 @@
 
 <script setup>
 useHead({
-  title: 'Nuttapon N - Full-Stack Developer & Software Engineer',
+  title: 'Nuttapon N - Project Manager & Technical Consultant',
   meta: [
-    { name: 'description', content: 'Portfolio and online resume of Nuttapon N - Full-Stack Developer specializing in Vue.js, Nuxt.js, and modern web technologies' }
+    { name: 'description', content: 'Portfolio and online resume of Nuttapon N - Project Manager & Technical Consultant specializing in IT Project Management, Solution Architecture, and Satellite Systems' }
   ]
 })
 </script>
