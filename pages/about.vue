@@ -4,16 +4,16 @@
       <h1>{{ pageData.header.title }}</h1>
       <NuxtLink to="/" class="back-link">{{ pageData.header.backLinkText }}</NuxtLink>
     </header>
-    
+
     <main>
       <section class="content">
         <h2>{{ pageData.professionalSummary.title }}</h2>
         <p>{{ pageData.professionalSummary.content }}</p>
-        
+
         <h3>{{ pageData.workExperience.title }}</h3>
-        
-        <div 
-          v-for="(experience, index) in pageData.workExperience.items" 
+
+        <div
+          v-for="(experience, index) in pageData.workExperience.items"
           :key="index"
           class="experience-item"
         >
@@ -25,7 +25,7 @@
               </h4>
               <p class="company">{{ experience.company }}</p>
             </div>
-            <span class="period">{{ experience.period }}</span>
+            <span class="period">{{ getPeriod(experience.startDate, experience.endDate) }}</span>
           </div>
           <div v-show="isExperienceExpanded(index)" class="experience-details">
             <p v-if="experience.location" class="location">{{ experience.location }}</p>
@@ -72,11 +72,11 @@
             <p v-if="experience.skills"><strong>Skills:</strong> {{ experience.skills }}</p>
           </div>
         </div>
-        
+
         <h3>{{ pageData.education.title }}</h3>
-        
-        <div 
-          v-for="(education, index) in pageData.education.items" 
+
+        <div
+          v-for="(education, index) in pageData.education.items"
           :key="index"
           class="education-item"
         >
@@ -88,18 +88,18 @@
               </h4>
               <p class="school">{{ education.school }}</p>
             </div>
-            <span class="period">{{ education.period }}</span>
+            <span class="period">{{ getPeriod(education.startDate, education.endDate) }}</span>
           </div>
           <div v-show="isEducationExpanded(index)" class="education-details">
             <p v-if="education.activities"><strong>Activities and societies:</strong> {{ education.activities }}</p>
             <p v-if="education.skills"><strong>Skills:</strong> {{ education.skills }}</p>
           </div>
         </div>
-        
+
         <h3>{{ pageData.technicalSkills.title }}</h3>
         <div class="skills-list">
-          <div 
-            v-for="(skillCategory, index) in pageData.technicalSkills.categories" 
+          <div
+            v-for="(skillCategory, index) in pageData.technicalSkills.categories"
             :key="index"
             class="skill-item"
           >
@@ -116,7 +116,7 @@
         </div>
       </section>
     </main>
-    
+
     <footer>
       <p>{{ pageData.footer.text }}</p>
     </footer>
@@ -126,6 +126,7 @@
 <script setup>
 import { ref } from 'vue'
 import resumeData from '@/data/resume.json'
+import { formatPeriod } from '@/utils/dateUtils'
 
 const pageData = resumeData
 
@@ -156,6 +157,10 @@ const toggleSkill = (index) => {
 const isExperienceExpanded = (index) => !!expandedExperiences.value[index]
 const isEducationExpanded = (index) => !!expandedEducation.value[index]
 const isSkillExpanded = (index) => !!expandedSkills.value[index]
+
+const getPeriod = (startDate, endDate) => {
+  return formatPeriod(startDate, endDate)
+}
 </script>
 
 <style scoped>
@@ -379,7 +384,7 @@ footer {
   .education-header {
     flex-direction: column;
   }
-  
+
   .content {
     padding: 2rem 1.5rem;
   }
