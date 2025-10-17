@@ -66,7 +66,7 @@
             :key="index"
             :href="link.url" 
             class="contact-link"
-            :target="link.url.startsWith('http') ? '_blank' : undefined"
+            :target="link.url.startsWith('http') && '_blank'"
           >
             {{ link.text }}
           </a>
